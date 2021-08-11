@@ -18,7 +18,7 @@ var callsTotalSetting = 0;
 var smsTotalSetting = 0;
 var totalCost = 0;
 
-
+// update settings event listener
 updateSettings.addEventListener('click', function(){
 
    
@@ -48,7 +48,7 @@ updateSettings.addEventListener('click', function(){
  
 });
 
-
+// radio button event listener
 radioBillAddButton.addEventListener('click', function(){
          
 
@@ -63,7 +63,7 @@ radioBillAddButton.addEventListener('click', function(){
             smsTotalSetting += 0.75;
         }
         
-        //update the totals that is displayed on the screen.
+        // Update the totals
         callTotalSettingsElemnt.innerHTML = callsTotalSetting.toFixed(2);
         smsTotalSettingElemnt.innerHTML = smsTotalSetting.toFixed(2);
         totalCost = callsTotalSetting + smsTotalSetting;
@@ -71,7 +71,7 @@ radioBillAddButton.addEventListener('click', function(){
         
         
         if (totalCost >= 50){
-            // adding the danger class will make the text red
+            // Adding the danger which will make text red
             totalSettingsElemnt.classList.add("danger");
         }
         else if (totalCost >= 30){
