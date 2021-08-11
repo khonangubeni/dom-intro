@@ -1,7 +1,7 @@
 //get a reference to the calculate button
-const calculateButtonElement = document.querySelector(".calculateBtn");
-const billTotalElement = document.querySelector(".billTotal");
-const billStringElement = document.querySelector(".billString");
+const calculateButtonElemnt = document.querySelector(".calculateBtn");
+const billTotalElemnt = document.querySelector(".billTotal");
+const billStringElemnt = document.querySelector(".billString");
 
 //totalphonebill function
 
@@ -26,17 +26,17 @@ function totalPhoneBill(usage) {
 }
 // calculatebutton function
 function calculateBtnClicked() {
-    var billString = billStringElement.value;
+    var billString = billStringElemnt.value;
     var billTotal = totalPhoneBill(billString);
-    billTotalElement.innerHTML = billTotal;
+    billTotalElemnt.innerHTML = billTotal;
 
-    billTotalElement.classList.remove("warning", "danger");
+    billTotalElemnt.classList.remove("warning", "danger");
 
     if (billTotal >= 20 && billTotal < 30) {
-        billTotalElement.classList.add("warning");
+        billTotalElemnt.classList.add("warning");
     }
     else if (billTotal >= 30) {
-        billTotalElement.classList.add("danger");
+        billTotalElemnt.classList.add("danger");
     }
 }
-calculateButtonElement.addEventListener('click', calculateBtnClicked);
+calculateButtonElemnt.addEventListener('click', calculateBtnClicked);
