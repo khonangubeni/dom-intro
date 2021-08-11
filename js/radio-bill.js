@@ -1,8 +1,8 @@
 // get a reference to the sms or call radio buttons
-const radioBillAddBtnElement = document.querySelector(".radioBillAddBtn");
-const callTotalTwoElement = document.querySelector(".callTotalTwo");
-const smsTotalTwoElement = document.querySelector(".smsTotalTwo");
-const totalTwoElement = document.querySelector(".totalTwo");
+const radioBillAddBtnElemnt = document.querySelector(".radioBillAddBtn");
+const callTotalTwoElemnt = document.querySelector(".callTotalTwo");
+const smsTotalTwoElemnt = document.querySelector(".smsTotalTwo");
+const totalTwoElemnt = document.querySelector(".totalTwo");
 
 var callsTotal = 0;
 var smsTotal = 0;
@@ -18,21 +18,21 @@ function radioBillTotal() {
         smsTotal += 0.75;
     }
 
-    callTotalTwoElement.innerHTML = callsTotal.toFixed(2);
-    smsTotalTwoElement.innerHTML = smsTotal.toFixed(2);
+    callTotalTwoElemnt.innerHTML = callsTotal.toFixed(2);
+    smsTotalTwoElemnt.innerHTML = smsTotal.toFixed(2);
     var costTotal = callsTotal + smsTotal;
-    totalTwoElement.innerHTML = costTotal.toFixed(2);
+    totalTwoElemnt.innerHTML = costTotal.toFixed(2);
 
 
-    totalTwoElement.classList.remove("warning", "danger");
+    totalTwoElemnt.classList.remove("warning", "danger");
 
     if (costTotal >= 30 && costTotal < 50) {
-        totalTwoElement.classList.add("warning");
+        totalTwoElemnt.classList.add("warning");
     }
     else if (costTotal >= 50) {
-        totalTwoElement.classList.add("danger");
+        totalTwoElemnt.classList.add("danger");
     }
 }
 
-radioBillAddBtnElement.addEventListener('click', radioBillTotal);
+radioBillAddBtnElemnt.addEventListener('click', radioBillTotal);
 
