@@ -1,13 +1,13 @@
 // get a reference to the sms or call radio buttons
-const callCostSettingElement = document.querySelector(".callCostSetting");
-const smsCostSettingElement = document.querySelector(".smsCostSetting");
-const warningLevelSettingElement = document.querySelector(".warningLevelSetting");
-const criticalLevelElement = document.querySelector(".criticalLevelSetting");
+const callCostSettingElemnt = document.querySelector(".callCostSetting");
+const smsCostSettingElemnt = document.querySelector(".smsCostSetting");
+const warningLevelSettingElemnt = document.querySelector(".warningLevelSetting");
+const criticalLevelElemnt = document.querySelector(".criticalLevelSetting");
 const addBtnsettings = document.querySelector(".addBtnsettings");
 const updateBtnsettings = document.querySelector(".updateSettings");
-const callTotalSettingsElement = document.querySelector(".callTotalSettings");
-const smsTotalSettingsElement = document.querySelector(".smsTotalSettings");
-const totalSettingsElement = document.querySelector(".totalSettings");
+const callTotalSettingsElemnt = document.querySelector(".callTotalSettings");
+const smsTotalSettingsElemnt = document.querySelector(".smsTotalSettings");
+const totalSettingsElemnt = document.querySelector(".totalSettings");
 
 
 // get refences to all the settings fields
@@ -22,17 +22,17 @@ var smsTotal = 0;
 //get a reference to the 'Update settings' button
 function updateSettings() {
 
-    if (callCostSettingElement.value != "") {
-        callCostSetting = Number(callCostSettingElement.value);
+    if (callCostSettingElemnt.value != "") {
+        callCostSetting = Number(callCostSettingElemnt.value);
     } 
-    if (smsCostSettingElement.value != "") {
-        smsCostSetting = Number(smsCostSettingElement.value);
+    if (callCostSettingElemnt.value != "") {
+        smsCostSetting = Number(smsCostSettingElemnt.value);
     }
-    if (warningLevelSettingElement.value != "") {
-        warningLevelSetting = Number(warningLevelSettingElement.value);
+    if (warningLevelSettingElemnt.value != "") {
+        warningLevelSetting = Number(warningLevelSettingElemnt.value);
     }
-    if (criticalLevelElement.value != "") {
-        criticalLevel = Number(criticalLevelElement.value);
+    if (criticalLevelElemnt.value != "") {
+        criticalLevel = Number(criticalLevelElemnt.value);
     }
 
 }
@@ -47,19 +47,19 @@ function settingsBillTotal() {
         smsTotal += smsCostSetting;
     }
 
-    callTotalSettingsElement.innerHTML = callsTotal.toFixed(2);
-    smsTotalSettingsElement.innerHTML = smsTotal.toFixed(2);
+    callTotalSettingsElemnt.innerHTML = callsTotal.toFixed(2);
+    smsTotalSettingsElemnt.innerHTML = smsTotal.toFixed(2);
     var costTotal = callsTotal + smsTotal;
-    totalSettingsElement.innerHTML = costTotal.toFixed(2);
+    totalSettingsElemnt.innerHTML = costTotal.toFixed(2);
 
 
-    totalSettingsElement.classList.remove("warning", "danger");
+    totalSettingsElemnt.classList.remove("warning", "danger");
 
     if (costTotal >= warningLevelSetting && costTotal < criticalLevel) {
-        totalSettingsElement.classList.add("warning");
+        totalSettingsElemnt.classList.add("warning");
     }
     else if (costTotal >= criticalLevel) {
-        totalSettingsElement.classList.add("danger");
+        totalSettingsElemnt.classList.add("danger");
     }
 }
 //add an event listener for when the 'Update settings' button is presse
