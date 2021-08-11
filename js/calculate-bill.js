@@ -3,7 +3,6 @@ const calculateButtonElement = document.querySelector(".calculateBtn");
 const billTotalElement = document.querySelector(".billTotal");
 const billStringElement = document.querySelector(".billString");
 
-
 //totalphonebill function
 
 function totalPhoneBill(usage) {
@@ -18,13 +17,12 @@ function totalPhoneBill(usage) {
             smsUsage.push(arrUsage[i]);
         };
     };
-
     var callCost = callUsage.length * 2.75;
     var smsCost = smsUsage.length * 0.75;
     var totalCost = callCost + smsCost;
-    var billAmt = totalCost.toFixed(2).toString();
+    var billAmount = totalCost.toFixed(2).toString();
 
-    return billAmt;
+    return billAmount;
 }
 // calculatebutton function
 function calculateBtnClicked() {
@@ -41,5 +39,4 @@ function calculateBtnClicked() {
         billTotalElement.classList.add("danger");
     }
 }
-
 calculateButtonElement.addEventListener('click', calculateBtnClicked);
