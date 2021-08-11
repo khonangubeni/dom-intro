@@ -9,6 +9,7 @@ const totalCost_billElemnt = document.querySelector(".totalCost_bill");
 var callsTotalOne = 0;
 var smsTotalOne = 0;
 
+// Text Bill Total
 function textBillTotal() {
     var billTypeText = billTypeTextElemnt.value.trim();
 
@@ -34,14 +35,5 @@ function textBillTotal() {
     }
 }
 
-addToBillButtonElemnt.addEventListener('click', textBillTotal);
-//get a reference to the add button
-
-//create a variable that will keep track of the total bill
-
 //add an event listener for when the add button is pressed
-
-//in the event listener check if the value in the bill type textbox is 'sms' or 'call'
-// * add the appropriate value to the running total
-// * add nothing for invalid values that is not 'call' or 'sms'.
-// * display the latest total on the screen
+addToBillButtonElemnt.addEventListener('click', textBillTotal);
